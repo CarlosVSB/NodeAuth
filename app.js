@@ -11,6 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.use(router);
+const port = process.env.PORT || 3001;
 
 //credenciais
 const dbuser = process.env.DB_USER;
@@ -21,7 +22,7 @@ mongoose
     `mongodb+srv://${dbuser}:${dbpass}@cluster0.sqir2tw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(3000);
+    app.listen(port);
     console.log("conexão bem sucedida");
   })
   .catch((err) => console.log(err));
