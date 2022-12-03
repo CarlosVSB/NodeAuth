@@ -91,9 +91,10 @@ module.exports = {
         },
         secret
       );
+      const id = user._id;
       res
         .status(200)
-        .json({ msg: "autenticação realizada com sucesso", token });
+        .json({ msg: "autenticação realizada com sucesso", token, id });
     } catch (error) {
       console.log(error);
       res.status(500).json({ msg: "Opss um erro inesperado aconteceu" });
