@@ -4,9 +4,11 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const router = require("./routes");
+const cors = require("cors");
 
 const app = express();
 
+app.use(cors());
 //config jason response
 app.use(express.json());
 
